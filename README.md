@@ -36,14 +36,24 @@ The page includes an introduction section, an about section, and a contact secti
 project-folder/
 │
 ├── index.html
-├── css/
-│   ├── reset.css
-│   └── style.css
 │
 ├── images/
-│   ├── wanderer.webp
-│   ├── x.svg
+│   ├── icons/
+│   │   ├── apple-touch-icon.png
+│   │   ├── favicon.ico
+│   │   ├── icon-192-maskable.png
+│   │   ├── icon-192.png
+│   │   ├── icon-512-maskable.png
+│   │   └── icon-512.png
+│   │
+│   ├── github.svg
 │   ├── linkedin.svg
-│   └── github.svg
+│   ├── wanderer.webp
+│   └── x.svg
 │
-└── README.md
+├── js/
+│   └── index.js
+│
+└── styles/
+    ├── index.css
+    └── reset.css
