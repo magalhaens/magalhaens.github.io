@@ -1,0 +1,395 @@
+#introduction,
+#about,
+#contact {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* INTRODUCTION */
+
+#introduction {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("../images/wanderer.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: white;
+}
+
+#introduction::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+#introduction>* {
+    position: relative;
+    z-index: 2;
+}
+
+#introduction h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    padding: 16px;
+}
+
+#introduction a {
+    display: inline-block;
+
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    color: white;
+
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#introduction a:hover {
+    transform: scale(1.08);
+    color: rgb(101, 186, 255);
+}
+
+/* ABOUT */
+
+#about {
+    max-width: 800px;
+
+    margin: 0 auto;
+    padding: 80px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: left;
+}
+
+#about h1 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    margin-bottom: 24px;
+}
+
+#about p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+#about a {
+    color: rgb(0, 89, 255);
+    transition: color 0.3s ease;
+}
+
+#about a:hover {
+    color: rgb(33, 51, 83);
+}
+
+/* CONTACT */
+
+#contact {
+    position: relative;
+
+    padding: 60px 20px 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: white;
+
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 35%),
+        linear-gradient(135deg, #0f0f0f, #151515, #1f1f1f);
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.contact-content h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.contact-content p {
+    max-width: 500px;
+
+    color: #cfcfcf;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.contact-email {
+    display: inline-block;
+
+    color: #cfcfcf;
+    font-size: 1rem;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.contact-email:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-6px);
+}
+
+.social-links img {
+    width: clamp(56px, 8vw, 80px);
+    height: clamp(56px, 8vw, 80px);
+    object-fit: contain;
+}
+
+.footer-bottom {
+    position: absolute;
+    bottom: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.footer-bottom span {
+    max-width: 500px;
+    line-height: 1.5;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Tablets */
+@media (max-width: 768px) {
+    html {
+        scroll-snap-type: y proximity;
+    }
+
+    #introduction,
+    #about,
+    #contact {
+        min-height: 100dvh;
+    }
+
+    #introduction {
+        padding: 0 24px;
+        background-position: center;
+    }
+
+    #introduction h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+        padding: 12px;
+    }
+
+    #introduction a {
+        font-size: 1rem;
+    }
+
+    #about {
+        max-width: 100%;
+        padding: 72px 28px;
+    }
+
+    #about h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    #about p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 14px;
+    }
+
+    #contact {
+        padding: 72px 24px 32px;
+    }
+
+    .contact-content {
+        gap: 20px;
+    }
+
+    .contact-content h1 {
+        font-size: 2rem;
+    }
+
+    .contact-content p {
+        max-width: 420px;
+        font-size: 0.95rem;
+    }
+
+    .social-links {
+        gap: 28px;
+    }
+
+    .social-links img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .footer-bottom {
+        position: static;
+        margin-top: 64px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    html {
+        scroll-snap-type: none;
+    }
+
+    #introduction,
+    #about,
+    #contact {
+        min-height: 100dvh;
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+    }
+
+    #introduction {
+        padding: 0 20px;
+    }
+
+    #introduction::before {
+        background: rgba(0, 0, 0, 0.75);
+    }
+
+    #introduction h1 {
+        font-size: clamp(2rem, 12vw, 2.7rem);
+        line-height: 1.1;
+        padding: 10px;
+    }
+
+    #introduction a {
+        font-size: 1rem;
+    }
+
+    #about {
+        padding: 64px 22px;
+    }
+
+    #about h1 {
+        font-size: 1.8rem;
+        margin-bottom: 18px;
+    }
+
+    #about p {
+        font-size: 0.95rem;
+        line-height: 1.65;
+        margin-bottom: 14px;
+    }
+
+    #contact {
+        padding: 64px 20px 28px;
+    }
+
+    .contact-content {
+        gap: 18px;
+    }
+
+    .contact-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    .contact-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .contact-email {
+        font-size: 0.9rem;
+        word-break: break-word;
+    }
+
+    .social-links {
+        gap: 22px;
+        flex-wrap: wrap;
+    }
+
+    .social-links img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .footer-bottom {
+        position: static;
+        margin-top: 56px;
+
+        font-size: 0.8rem;
+        padding: 0 12px;
+    }
+
+    .footer-bottom span {
+        max-width: 320px;
+    }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 360px) {
+    #about {
+        padding: 56px 18px;
+    }
+
+    #about p {
+        font-size: 0.9rem;
+    }
+
+    .social-links {
+        gap: 18px;
+    }
+
+    .social-links img {
+        width: 46px;
+        height: 46px;
+    }
+
+    .contact-email {
+        font-size: 0.85rem;
+    }
+}
